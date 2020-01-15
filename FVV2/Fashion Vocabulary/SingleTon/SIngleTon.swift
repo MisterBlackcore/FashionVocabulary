@@ -1,0 +1,858 @@
+import Foundation
+import UIKit
+
+class SingleTon {
+    
+    var sectionName = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","#"]
+    
+    var wordArrayA = [Word(englishWord: "Accessories", belarusianWord: "Аксесуары",
+                           englishDefinition: "Something added to clothing that has a useful or decorative purpose.",
+                           belarusianDefinition: "Пабочныя дэталі, якія ствараюць фон галоўнага.",
+                           wordImage: UIImage(named: "1")!),
+                      Word(englishWord: "Ankle boots", belarusianWord: "Батыльёны",
+                           englishDefinition: "Boots that extend up as far as the ankles.",
+                           belarusianDefinition: "Мікс туфель і паўботаў.",
+                           wordImage: UIImage(named: "2")!),
+                      Word(englishWord: "Anorak", belarusianWord: "Анарак",
+                           englishDefinition: "A lightweight windproof jacket made of thick fabric with a hood.",
+                           belarusianDefinition: "Лёгкая ветраахоўная куртка са шчыльнай тканіны з капюшонам, якая апранаецца праз галаву.",
+                           wordImage: UIImage(named: "3")!)]
+    
+    var wordArrayB = [Word(englishWord: "Backpack", belarusianWord: "Заплечнік",
+                           englishDefinition: "A piece of equipment designed to be used while being carried on the back.",
+                           belarusianDefinition: "Заплечны мяшок, рукзак.",
+                           wordImage: UIImage(named: "4")!),
+                      Word(englishWord: "Bandanna", belarusianWord: "Бандана",
+                           englishDefinition: "Any large scarf for the neck or head.",
+                           belarusianDefinition: "Галаўны ўбор ў выглядзе хусткі, канцы якой завязваюцца на патыліцы.",
+                           wordImage: UIImage(named: "5")!),
+                      Word(englishWord: "Bando", belarusianWord: "Бандо",
+                           englishDefinition: "A variety of women's underwear.",
+                           belarusianDefinition: "Разнавіднасць жаночай ніжняй бялізны.",
+                           wordImage: UIImage(named: "6")!),
+                      Word(englishWord: "Baseball cap", belarusianWord: "Бейсболка",
+                           englishDefinition: "A cotton cap of a kind originally worn by baseball players, with a large peak and an adjustable strap at the back.",
+                           belarusianDefinition: "Спартыўны галаўны ўбор, кепка з казырком.",
+                           wordImage: UIImage(named: "7")!),
+                      Word(englishWord: "Beads", belarusianWord: "Каралі/пацеркі",
+                           englishDefinition: "Small pieces of coloured glass, wood, or plastic with the hole through the middle. Beads are often put together on a piece of string or wire to make jewellery.",
+                           belarusianDefinition: "Упрыгожванне з каралавых або іншых каштоўных камянёў,якое надзяваецца на шыю.",
+                           wordImage: UIImage(named: "8")!),
+                      Word(englishWord: "Belt", belarusianWord: "Рэмень",
+                           englishDefinition: "A strip of leather or material worn around the waist to support clothes or for decoration.",
+                           belarusianDefinition: "Скураны пояс, папруга.",
+                           wordImage: UIImage(named: "9")!),
+                      Word(englishWord: "Bermuda shorts", belarusianWord: "Бермуды",
+                           englishDefinition: "Шырокія штаны вольнага крою да каленяў або трохі ніжэй.",
+                           belarusianDefinition: "Also known as walk shorts or dress shorts, are particular type of trousers, worn as semi-casual attire by both men and women.",
+                           wordImage: UIImage(named: "10")!),
+                      Word(englishWord: "Bikini", belarusianWord: "Бiкiнi",
+                           englishDefinition: "A very brief, close-fitting, two-piece bathing suit for women or girls.",
+                           belarusianDefinition: "Від жаночага купальнага касцюма, які максімальна агаляе цела.",
+                           wordImage: UIImage(named: "11")!),
+                      Word(englishWord: "Blazer", belarusianWord: "Блэйзер",
+                           englishDefinition: "A coloured jacket worn by schoolchildren or sports players as part of a uniform.",
+                           belarusianDefinition: "Аднабортны або двухбортны пінжак з накладнымі кішэнямі без клапана. Часта мае металічныя гузікі, нашытыя на рукаў ці грудзі эмблемы.",
+                           wordImage: UIImage(named: "12")!),
+                      Word(englishWord: "Blouse", belarusianWord: "Блузка",
+                           englishDefinition: "A usually lightweight, loose-fitting garment for women and children, covering the body from the neck or shoulders more or less to the waistline, with or without a collar and sleeves, worn inside or outside a skirt, slacks, etc.",
+                           belarusianDefinition: "Жаночая кофтачка з лёгкай тканіны.",
+                           wordImage: UIImage(named: "13")!),
+                      Word(englishWord: "Body", belarusianWord: "Бодзi",
+                           englishDefinition: "A variety of swimsuit and poloneck.",
+                           belarusianDefinition: "Суцэльнаскроеная  бялізна, якая аблягае цела і мае выгляд адзінага камплекта, накшталт купальніка.",
+                           wordImage: UIImage(named: "14")!),
+                      Word(englishWord: "Bomber", belarusianWord: "Бомбер",
+                           englishDefinition: "A jacket, often made of leather with ribbed trim, resembling those worn by World War II bomber crews.",
+                           belarusianDefinition: "Верхняя вопратка, тып курткі, створаны для пілотаў ВПС ЗША падчас Другой сусветнай вайны. З часам з чыста ваеннай экіпіроўкі яна перайшла  ў звычайную вопратку.",
+                           wordImage: UIImage(named: "15")!),
+                      Word(englishWord: "Вoots", belarusianWord: "Буцы",
+                           englishDefinition: "A type of shoe that is used for sportsmen who play football or rugby.",
+                           belarusianDefinition: "Чаравікі з шыпамі на падэшвах для гульні ў футбол.",
+                           wordImage: UIImage(named: "16")!),
+                      Word(englishWord: "Boots", belarusianWord: "Боты",
+                           englishDefinition: "A type of shoe that covers the whole foot and the lower part of the leg.",
+                           belarusianDefinition: "Гумавы ці скураны абутак з высокімі халявамі.",
+                           wordImage: UIImage(named: "17")!),
+                      Word(englishWord: "Boutique", belarusianWord: "Буцік",
+                           englishDefinition: "A small shop that sells fashionable clothes, shoes, jewellery, etc.",
+                           belarusianDefinition: "Невялікі магазін- салон, які прапануе дарагое адзенне, абутак, галантарэю.",
+                           wordImage: UIImage(named: "18")!),
+                      Word(englishWord: "Boxers", belarusianWord: "Боксеры",
+                           englishDefinition: "Men’s underwear that fits loosely and is similar to short trousers.",
+                           belarusianDefinition: "Мужчынская бялiзна, падобная на кароткiя штаны, якая павольна аблягае цела.",
+                           wordImage: UIImage(named: "19")!),
+                      Word(englishWord: "Brand", belarusianWord: "Брэнд",
+                           englishDefinition: "A type of product manufactured by a particular company under a particular name.",
+                           belarusianDefinition: "Марка прадукцыі, якая вырабляецца пэўнай кампаніяй.",
+                           wordImage: UIImage(named: "20")!),
+                      Word(englishWord: "Breeches", belarusianWord: "Брыджы",
+                           englishDefinition: "Also called knee breeches. Knee-length trousers, often having ornamental buckles or elaborate decoration at or near the bottoms, commonly worn by men and boys in the 17th, 18th, and early 19th centuries.",
+                           belarusianDefinition: "Штаны асобага крою, вузкія ўніз ад калена (першапачаткова прызначаліся для верхавой язды.",
+                           wordImage: UIImage(named: "21")!),
+                      Word(englishWord: "Brogues", belarusianWord: "Брогі",
+                           englishDefinition: "Type of shoes with decorative perforations, which can be located along the seams, on socks and backs.",
+                           belarusianDefinition: "Туфлі з перфарацыяй.",
+                           wordImage: UIImage(named: "22")!),
+                      Word(englishWord: "Bustier", belarusianWord: "Бюсцье",
+                           englishDefinition: "A form-fitting garment for women, which is traditionally worn as lingerie.",
+                           belarusianDefinition: "Від ніжняцй жаночай бялізны.",
+                           wordImage: UIImage(named: "23")!),
+                      Word(englishWord: "Button", belarusianWord: "Гузік",
+                           englishDefinition: "A small, usually circular object used to fasten something, for example a shirt or coat.",
+                           belarusianDefinition: "Металічная, касцяная або іншая зашпілька. Пераважна ў форме кружка, якая прышываецца да адзення, абутку.",
+                           wordImage: UIImage(named: "24")!)]
+    
+    var wordArrayC = [Word(englishWord: "Cap", belarusianWord: "Кепі",
+                           englishDefinition: "A soft flat hat that has a curved part sticking out at the front, often worn as part of a uniform.",
+                           belarusianDefinition: "Род фуражкі з невялікім цвёрдым донцам і шырокім прамым казырком.",
+                           wordImage: UIImage(named: "25")!),
+                      Word(englishWord: "Capri", belarusianWord: "Капры",
+                           englishDefinition: "Short pants, about mid-calf length. Worn mainly by women.",
+                           belarusianDefinition: "Кароткія (да калена) жаночыя штаны, якія аблягаюць фігуру.",
+                           wordImage: UIImage(named: "26")!),
+                      Word(englishWord: "Cardigan", belarusianWord: "Кардыган",
+                           englishDefinition: "A usually collarless knitted sweater or jacket that opens down the front.",
+                           belarusianDefinition: "Вязаны шарсцяны жакет , які аблягае фігуру. Можа быць на гузіках.",
+                           wordImage: UIImage(named: "27")!),
+                      Word(englishWord: "Clips ", belarusianWord: " Kліпсы ",
+                           englishDefinition: "A piece of jewelry  that is worn as an ornament or fastener and that is held in position by a clip.",
+                           belarusianDefinition: "Заціскныя завушніцы.",
+                           wordImage: UIImage(named: "28")!),
+                      Word(englishWord: "Clutch ", belarusianWord: " Клатч ",
+                           englishDefinition: "A small elegant handbag-envelope. The clutch may have a small handle, not a strap, but it is usually worn under the arm or clasped in the palm of your hand.",
+                           belarusianDefinition: "Невялікая элегантная жаночая сумка, якую звычайна носяць, абхапіўшы далонню або пад пахай.",
+                           wordImage: UIImage(named: "29")!),
+                      Word(englishWord: "Coat", belarusianWord: "Паліто",
+                           englishDefinition: "An outer piece of clothing with sleeves that is worn over other clothes, usually for warmth.",
+                           belarusianDefinition: "Верхняя вопратка, звычайна ніжэй каленяў, якая апранаецца на сукенку, касцюм.",
+                           wordImage: UIImage(named: "30")!),
+                      Word(englishWord: "Сollar", belarusianWord: "Каўнер",
+                           englishDefinition: "The part around the neck of a piece of clothing, usually sewn on and sometimes made of different material.",
+                           belarusianDefinition: "Верхняя, часцей прышыўная частка адзення , якая прылягае да шыі.",
+                           wordImage: UIImage(named: "31")!),
+                      Word(englishWord: "Corset", belarusianWord: "Гарсэт",
+                           englishDefinition: "A close-fitting undergarment, stiffened with whalebone or similar material and often capable of being tightened by lacing, enclosing the trunk: worn, especially by women, to shape and support the body; stays.",
+                           belarusianDefinition: "Шырокі і пругкі пояс, які носяць пад сукенцай для сцягвання таліі і падання стройнасці фігуры.",
+                           wordImage: UIImage(named: "32")!),
+                      Word(englishWord: "Cotton", belarusianWord: "Бавоўна",
+                           englishDefinition: "Thread or cloth made from the fibres of the cotton plant.",
+                           belarusianDefinition: "Ватападобнае валакно, якое ідзе на выраб пражы.",
+                           wordImage: UIImage(named: "33")!),
+                      Word(englishWord: "Creative", belarusianWord: "Крэатыў",
+                           englishDefinition: "Relating to or involving the use of the imagination or original ideas to create something",
+                           belarusianDefinition: "Тое, што з’яўляецца творчым, стваральным.",
+                           wordImage: UIImage(named: "34")!)]
+    
+    var wordArrayD = [Word(englishWord: "Denim", belarusianWord: "Дэнім",
+                           englishDefinition: "A sturdy cotton warp-faced textile in which the weft passes under two or more warp threads.",
+                           belarusianDefinition: "Джынсавая тканіна.",
+                           wordImage: UIImage(named: "35")!),
+                      Word(englishWord: "Derby", belarusianWord: "Дэрбі",
+                           englishDefinition: "A style of boots characterized by quarters with shoelace eyelets that are sewn on the top of the vamp.",
+                           belarusianDefinition: "Стыльныя туфлі з адкрытай шнуроўкай.",
+                           wordImage: UIImage(named: "36")!),
+                      Word(englishWord: "Desert shoes", belarusianWord: "Дзезерты",
+                           englishDefinition: "The quintessential “dress casual” or “sharp casual“shoe.",
+                           belarusianDefinition: "Чаравікі з замшавым верхам на гумавай падэшве з дзвюма парамі адтулін для матузкоў.",
+                           wordImage: UIImage(named: "37")!),
+                      Word(englishWord: "Dreadlocks", belarusianWord: "Дрэды",
+                           englishDefinition: "Ropelike strands of hair formed by matting or braiding hair.",
+                           belarusianDefinition: "Прычоска ў выглядзе вялікай колькасці кос,заплеценых па спецыяльнай тэхналогіі; афрыканскія косы.",
+                           wordImage: UIImage(named: "38")!),
+                      Word(englishWord: "Dress", belarusianWord: "Сукенка",
+                           englishDefinition: "A piece of clothing for women or girls that covers the top half of the body.",
+                           belarusianDefinition: "Жаночае адзенне, верхняя частка якога, што адпавядае кофце, складае адзінае цэлае з ніжняй часткай, якая адпавядае спадніцы.",
+                           wordImage: UIImage(named: "39")!),
+                      Word(englishWord: "Dress-code", belarusianWord: "Дрэс-код",
+                           englishDefinition: "A set of rules specifying the garb or type of clothing to be worn by a group or by people under specific circumstances.",
+                           belarusianDefinition: "Набор правілаў, якія вызначаюць, як апранацца ў пэўных абставінах.",
+                           wordImage: UIImage(named: "40")!),
+                      Word(englishWord: "Dungarees", belarusianWord: "Камбінезон",
+                           englishDefinition: "A pair of trousers with an extra piece of cloth that covers the chest and is held in place by a strap over each shoulder.",
+                           belarusianDefinition: "Суцэльны касцюм з курткі і штаноў.",
+                           wordImage: UIImage(named: "41")!)]
+    
+    var wordArrayE = [Word(englishWord: "Earrings", belarusianWord: "Завушніцы",
+                           englishDefinition: "A piece of jewellery, usually one of a pair, worn in a hole in the ear or fastened to the ear by a clip.",
+                           belarusianDefinition: "Упрыгожванне, звычайна ў выглядзе кальца, якое прымацоўваецца да мочкі вуха.",
+                           wordImage: UIImage(named: "42")!)]
+    
+    var wordArrayF = [Word(englishWord: "Fad", belarusianWord: "Фішка",
+                           englishDefinition: "Fashion, style, custom accepted by those who want to be up-to-date  for a brief period of time.",
+                           belarusianDefinition: "Пра самае моднае, цікавае, істотнае.",
+                           wordImage: UIImage(named: "43")!),
+                      Word(englishWord: "Fashion", belarusianWord: "Фэшн",
+                           englishDefinition: "The area of activity that involves styles of clothing and appearance.",
+                           belarusianDefinition: "Мода.",
+                           wordImage: UIImage(named: "44")!),
+                      Word(englishWord: "Fashion collection", belarusianWord: "Фэшн-калекцыя",
+                           englishDefinition: "A selection of outfits and individual garments that fashion designers put together every season and that reflect predictions of upcoming trends, including color, cut, line and proportion.",
+                           belarusianDefinition: "Калекцыя моднага адзення.",
+                           wordImage: UIImage(named: "45")!),
+                      Word(englishWord: "Fashion designer", belarusianWord: "Фэшн дызайнер",
+                           englishDefinition: "Someone who designs clothing.",
+                           belarusianDefinition: "Чалавек, які стварае новыя мадэлі адзення ці абутку.",
+                           wordImage: UIImage(named: "46")!),
+                      Word(englishWord: "Fashion industry", belarusianWord: "Фэшн-індустрыя",
+                           englishDefinition: "Multibillion-dollar global enterprise devoted to the business of making and selling clothes.",
+                           belarusianDefinition: "Галіна дзейнасці, звязаная з вырабам і рэалізацыяй моднага адзення.",
+                           wordImage: UIImage(named: "47")!),
+                      Word(englishWord: "Fashion show", belarusianWord: "Дэфіле",
+                           englishDefinition: "A show for the public where models wear new styles of clothes.",
+                           belarusianDefinition: "Паказ мадэлей сучаснага адзення.",
+                           wordImage: UIImage(named: "48")!),
+                      Word(englishWord: "French", belarusianWord: "Фрэнч",
+                           englishDefinition: "Jacket , named after British field Marshal John Denton French.",
+                           belarusianDefinition: "Прыталеная куртка ваеннага крою, названая ў гонар  брытанскага фельдмаршала Джона Дэнтоні Фрэнча.",
+                           wordImage: UIImage(named: "49")!),
+                      Word(englishWord: "Fur", belarusianWord: "Футра",
+                           englishDefinition: "The thick hair that covers the bodies of some animals, or the hair-covered skin(s) of animals, removed from their bodies.",
+                           belarusianDefinition: "Вырабленая шкура пушнога звера.",
+                           wordImage: UIImage(named: "50")!),
+                      Word(englishWord: "Furcoat", belarusianWord: "Футра",
+                           englishDefinition: "A coat made from animal fur.",
+                           belarusianDefinition: "Зімовая вопратка з вырабленых шкур пушнога звера.",
+                           wordImage: UIImage(named: "51")!)]
+    
+    var wordArrayG = [Word(englishWord: "Gaiter", belarusianWord: "Гетры",
+                           englishDefinition: "The kind of warm stockings, worn over a shoe, also buttoned overlay short (ankle) surface of the shaft. A kind of football uniform.",
+                           belarusianDefinition: "Від цёплай адзежы для ног, якая нацягваецца паверх абутку і закрывае нагу ад калена да шчыкалаткі.",
+                           wordImage: UIImage(named: "52")!),
+                      Word(englishWord: "Gladiator sandals", belarusianWord: "Гладыятары",
+                           englishDefinition: "Open-toed T-bar sandals with multiple straps running across the foot in a style designed to resemble that of the footwear of ancient Roman gladiators.",
+                           belarusianDefinition: "Від сандаляў з вялікай колькасцю раменьчыкаў.",
+                           wordImage: UIImage(named: "53")!),
+                      Word(englishWord: "Glasses", belarusianWord: "Акуляры",
+                           englishDefinition: "Two small pieces of specially made glass or transparent plastic worn in front of the eyes to improve sight and held in place with a frame that reaches back over the ears.",
+                           belarusianDefinition: "Аптычная прылада з двух шкельцаў з аглабелькамі. Служаць для выпраўлення недахопаў зроку або засцярогі вачэй ад пашкоджання.",
+                           wordImage: UIImage(named: "54")!),
+                      Word(englishWord: "Gloves", belarusianWord: "Пальчаткі",
+                           englishDefinition: "A covering for the hand worn for protection against cold or dirt and typically having separate parts for each finger and the thumb.",
+                           belarusianDefinition: "Рукавіцы з адзяленнямі для кожнага пальца.",
+                           wordImage: UIImage(named: "55")!)]
+    
+    var wordArrayH = [Word(englishWord: "Handbag", belarusianWord: "Сумка",
+                           englishDefinition: "A small bag for money, keys, make-up, carried especially by women.",
+                           belarusianDefinition: "Выраб са скуры, тканіны, звычайна з ручкамі, прызначаны для нашэння чаго-небудзь.",
+                           wordImage: UIImage(named: "56")!),
+                      Word(englishWord: "Hand-made", belarusianWord: "Хэнд-мэйд",
+                           englishDefinition: "Made by hand, not by machine, and typically therefore of superior quality.",
+                           belarusianDefinition: "Вырабы,зробленыя сваімі рукамі.",
+                           wordImage: UIImage(named: "57")!),
+                      Word(englishWord: "Hat", belarusianWord: "Капялюш",
+                           englishDefinition: "A covering for the head that is not part of a piece of clothing.",
+                           belarusianDefinition: "Галаўны убор, мужчынскі- з палямі, жаночы- розных фасонаў.",
+                           wordImage: UIImage(named: "58")!),
+                      Word(englishWord: "Heelys", belarusianWord: "Хілісы",
+                           englishDefinition: "Sports shoes, most often sneakers, with small wheels on the sole.",
+                           belarusianDefinition: "Ролікавыя красоўкi.",
+                           wordImage: UIImage(named: "59")!),
+                      Word(englishWord: "Hippie", belarusianWord: "Хіпі",
+                           englishDefinition: "A usually young person who rejects the mores of established society and advocates a nonviolent ethic.",
+                           belarusianDefinition: "Чалавек, які вядзе сябе сябе экстравагантна, знарок прэтэнцыёзна, не так, як іншыя, апранаецца.",
+                           wordImage: UIImage(named: "60")!),
+                      Word(englishWord: "Hipster", belarusianWord: "Хіпстар",
+                           englishDefinition: "Someone who is very influenced by the most recent ideas and fashions.",
+                           belarusianDefinition: "Прадстаўнікі маладзёжнай субкультуры, якія захапляюцца культурай, мастацтвам, модай, арт-хаусам, альтэрнатыўнай музыкай.",
+                           wordImage: UIImage(named: "61")!),
+                      Word(englishWord: "Hood", belarusianWord: "Капюшон",
+                           englishDefinition: "Part of a piece of clothing that can be pulled up to cover the top and back of the head.",
+                           belarusianDefinition: "Адкідны галаўны убор, прымацаваны ззаду да каўняра верхняй адзежыны.",
+                           wordImage: UIImage(named: "62")!),
+                      Word(englishWord: "Hoodie", belarusianWord: "Худзі",
+                           englishDefinition: "A kind of sweater made of soft cotton Jersey or fleece with a hood.",
+                           belarusianDefinition: "Нераспашная кофта з мяккага трыкатажу. Без зашпілек, з капюшонам.",
+                           wordImage: UIImage(named: "63")!)]
+    
+    var wordArrayI = [Word(englishWord: "Image", belarusianWord: "Iмiдж",
+                           englishDefinition: "A representation of the external form of a person.",
+                           belarusianDefinition: "Сукупнасць уяўленняў, якія склаліся ў грамадскай думцы пра тое, як павінен паводзіць сябе чалавек у адпаведнасці са сваім статусам.",
+                           wordImage: UIImage(named: "64")!),
+                      Word(englishWord: "Imagemaker", belarusianWord: "Iмiджмейкер",
+                           englishDefinition: "A person employed to identify and create a favourable public image for a person.",
+                           belarusianDefinition: "Асоба, якая стварае ў рэкламных мэтах вобраз пэўнай асобы.",
+                           wordImage: UIImage(named: "65")!)]
+    
+    var wordArrayJ = [Word(englishWord: "Jacket", belarusianWord: "Жакет",
+                           englishDefinition: "A short coat, in any of various forms, usually opening down the front.",
+                           belarusianDefinition: "Кароткая жаночая верхняя адзежына.",
+                           wordImage: UIImage(named: "66")!),
+                      Word(englishWord: "Jeans", belarusianWord: "Джынсы",
+                           englishDefinition: "Hard-wearing casual trousers made of denim or other cotton fabric.",
+                           belarusianDefinition: "Вузкiя штаны з баваўнянай тканiны, прашытыя каляровымi нiткамi.",
+                           wordImage: UIImage(named: "67")!),
+                      Word(englishWord: "Jersey", belarusianWord: "Джэрсі",
+                           englishDefinition: "Any of various close-fitting usually circular-knitted garments especially for the upper body.",
+                           belarusianDefinition: "Шарсцяная або шаўковая вязаная тканіна, а таксама адзенне з такой тканіны.",
+                           wordImage: UIImage(named: "68")!),
+                      Word(englishWord: "Jumper", belarusianWord: "Джэмпер",
+                           englishDefinition: "A piece of clothing with long sleeves that is usually made from wool, is worn on the upper part of the body and does not open at the front.",
+                           belarusianDefinition: "Суцэльнавязаная кофта без каўнера, якая надзяваецца праз галаву.",
+                           wordImage: UIImage(named: "69")!)]
+    
+    var wordArrayK = [Word(englishWord: "Kеds", belarusianWord: "Kеды",
+                           englishDefinition: "Sports shoes, an eponym from the Keds brand launched by an American company. Originally created for sports, subsequently became everyday shoes.",
+                           belarusianDefinition: "Лёгкі спартыўны  абутак з прарызіненай тканіны на мягкіх рабрыстых гумавых падэшвах.",
+                           wordImage: UIImage(named: "70")!),
+                      Word(englishWord: "Kilt", belarusianWord: "Кілт",
+                           englishDefinition: "Scotland traditional man’s skirt.",
+                           belarusianDefinition: "Мужчынская вопратка кельцкага  паходжання. Класічнымі лічацца шатландскія кілты, якія ўяўляюць сабою кавалак клецістай ваўнянай тканіны - тартан, абгорнутай вакол сцёганай і замацаванай ззаду рамянямі.",
+                           wordImage: UIImage(named: "71")!),
+                      Word(englishWord: "Knee-socks", belarusianWord: "Гольфы",
+                           englishDefinition: "Semi stockings covering the lower part of the legs below the knee.",
+                           belarusianDefinition: "Панчохі да калена.",
+                           wordImage: UIImage(named: "72")!)]
+    
+    var wordArrayL = [Word(englishWord: "Lace", belarusianWord: "Карункі",
+                           englishDefinition: "A decorative cloth made by twisting thin thread in delicate patterns with holes in them.",
+                           belarusianDefinition: "Ажурныя, сятчастыя вырыбы з ільняных, шаўковых і іншых нітак для аздобы бялізны і адзення.",
+                           wordImage: UIImage(named: "73")!),
+                      Word(englishWord: "Leather", belarusianWord: "Скура",
+                           englishDefinition: "Animal skin treated in order to preserve it, and used to make shoes, bags, clothes, equipment, etc.",
+                           belarusianDefinition: "Вырабленая шкура жывёлы.",
+                           wordImage: UIImage(named: "74")!),
+                      Word(englishWord: "Leggings", belarusianWord: " Легiнсы ",
+                           englishDefinition: "Kind of pants tight style.",
+                           belarusianDefinition: "Вузкія штаны з эластычнай тканіны, якія абцягваюць ногі, звычайна са штрыпкамі.",
+                           wordImage: UIImage(named: "75")!),
+                      Word(englishWord: "Loafers", belarusianWord: "Лоўферы",
+                           englishDefinition: "Shoes that don’t utilize a lacing or fastening system and are instead simply slipped on the foot. Usually, they have a low heel or no heel.",
+                           belarusianDefinition: "Туфлі без шнуркоў і засцежак, упрыгожаныя скураным кутасікам ці перамычкай на ўсходзе ступні. Нагадваюць макасіны, але у іх маецца абцас.",
+                           wordImage: UIImage(named: "76")!),
+                      Word(englishWord: "Look", belarusianWord: "Лук",
+                           englishDefinition: "A finished image, all the things of which are juxtaposed by the frame and color.",
+                           belarusianDefinition: "Фотаздымак ў поўны рост, удалы вобраз.",
+                           wordImage: UIImage(named: "77")!),
+                      Word(englishWord: "Lookbook", belarusianWord: "Лук-бук",
+                           englishDefinition: "A collection of photographs compiled to show off a model, photographer, style, stylist, or clothing line.",
+                           belarusianDefinition: "Серыя прафесійных фотаздымкаў, на якіх прадстаўлена адзенне ад пэўнага дызайнера.",
+                           wordImage: UIImage(named: "78")!),
+                      Word(englishWord: "Lycra", belarusianWord: "Лайкра",
+                           englishDefinition: "An elastic polyurethane fibre or fabric used especially for close-fitting sports clothing.",
+                           belarusianDefinition: "Спецыяльная сінтэтычная нітка ў складзе тканін, якая надае ім здольнасць расцягвацца і робіць адзенне больш моцным, трывалым.",
+                           wordImage: UIImage(named: "79")!),
+                      Word(englishWord: "Lurex", belarusianWord: "Люрэкс",
+                           englishDefinition: "A brand of metallic yarn, made of laminated aluminum foil and transparent film sliced into narrow strips.",
+                           belarusianDefinition: "Бліскучая нітка або вузкая палоска з металізаванай ці пакрытай фальгой плёнкі.",
+                           wordImage: UIImage(named: "80")!)]
+    
+    var wordArrayM = [Word(englishWord: "Mackintosh", belarusianWord: "Макінтош",
+                           englishDefinition: "A full-length waterproof coat.",
+                           belarusianDefinition: "Лёгкае летняе  паліто, часцей прарызіненае.",
+                           wordImage: UIImage(named: "81")!),
+                      Word(englishWord: "Man purse", belarusianWord: "Барсетка",
+                           englishDefinition: "A small bag made of leather, carried in the arms or over the shoulder, which usually contains documents, money, keys and other small items.",
+                           belarusianDefinition: "Невялікая мужчынская сумка для грошай, дакументаў.",
+                           wordImage: UIImage(named: "82")!),
+                      Word(englishWord: "Martens", belarusianWord: "Марцінсы",
+                           englishDefinition: "Slang word ,named types of shoes of brand Dr.Marten’s (an englishWord footwear and clothing brand, headquartered in Wollaston in Wellingborough).",
+                           belarusianDefinition: "Абутак армейскага тыпу для паўсядзённага нашэння.",
+                           wordImage: UIImage(named: "83")!),
+                      Word(englishWord: "Maxi", belarusianWord: "Максі",
+                           englishDefinition: "A skirt, coat, or dress reaching to the ankle.",
+                           belarusianDefinition: "Доўгая спадніца, сукенка, паліто; даўжэй, чым звычайна.",
+                           wordImage: UIImage(named: "84")!),
+                      Word(englishWord: "Midi", belarusianWord: "Мідзі",
+                           englishDefinition: "A woman's calf-length skirt, dress, or coat.",
+                           belarusianDefinition: "Спадніца, сукенка, паліто сярэдняй даўжыні.",
+                           wordImage: UIImage(named: "85")!),
+                      Word(englishWord: "Military", belarusianWord: "Мілітары",
+                           englishDefinition: "Relating to or characteristic of soldiers or armed forces.",
+                           belarusianDefinition: "Стыль адзення, у якім выкарыстоўваюцца элементы ваеннага абмундзіравання.",
+                           wordImage: UIImage(named: "86")!),
+                      Word(englishWord: "Mini", belarusianWord: "Міні",
+                           englishDefinition: "A very short skirt or dress.",
+                           belarusianDefinition: "Спадніца, сукенка, паліто мінімальнай даўжыні.",
+                           wordImage: UIImage(named: "87")!),
+                      Word(englishWord: "Moccasins", belarusianWord: "Макасіны",
+                           englishDefinition: "A soft leather slipper or shoe, strictly one without a separate heel, having the sole turned up on all sides and sewn to the upper in a simple gathered seam, in a style originating among North American Indians.",
+                           belarusianDefinition: "Мяккія скураныя чаравікі  паўночнаамерыканскіх індзейцаў.",
+                           wordImage: UIImage(named: "88")!),
+                      Word(englishWord: "Мohair", belarusianWord: "Махер",
+                           englishDefinition: "A fabric or yarn made wholly or in part of the long silky hair of the Angora goat.",
+                           belarusianDefinition: "Шэрсць ангорскай казы/выраб з гэтай шэрсці.",
+                           wordImage: UIImage(named: "89")!),
+                      Word(englishWord: "Monk shoes", belarusianWord: "Монка",
+                           englishDefinition: "A style of dress shoes with no lacing, instead secured on the feet by one or multiple buckles and straps, less formal than a full Oxford but more so than an open Derby.",
+                           belarusianDefinition: "Мужчынскі абутак, які наогул не мае шнуроўкі, такія туфлі дэкаруюць спражкамі.",
+                           wordImage: UIImage(named: "90")!),
+                      Word(englishWord: "Muli shoes", belarusianWord: "Мюлі",
+                           englishDefinition: "Shoes without a backdrop.",
+                           belarusianDefinition: "Туфлі без задніка.",
+                           wordImage: UIImage(named: "91")!),
+                      Word(englishWord: "Must-have", belarusianWord: "Маст-хэв",
+                           englishDefinition: "Clothing that many people want to own.",
+                           belarusianDefinition: "Адзенне, якое абавязкова мець.",
+                           wordImage: UIImage(named: "92")!)]
+    
+    var wordArrayN:[Word] = []
+    
+    var wordArrayO = [Word(englishWord: "Organizer", belarusianWord: "Арганайзар",
+                           englishDefinition: "Small boxes in different size compartments for different types of cosmetic products, clothes, and so on.",
+                           belarusianDefinition: "Невялікія скрыні з рознымі па велічыні адсекамі для розных відаў касметычнай прадукцыі, адзення.",
+                           wordImage: UIImage(named: "93")!),
+                      Word(englishWord: "Organza", belarusianWord: "Арганза",
+                           englishDefinition: "A type of thin, stiff, transparent cloth made of silk or artificial thread.",
+                           belarusianDefinition: "Лёгкая празрыстая тканіна з эфектам мікатлівага блеску.",
+                           wordImage: UIImage(named: "94")!),
+                      Word(englishWord: "Outfit", belarusianWord: "Аўтфіт",
+                           englishDefinition: "A set of clothes worn for a particular occasion or activity.",
+                           belarusianDefinition: "Агульная назва для камплекта адзення, абутка і аксэсуараў.",
+                           wordImage: UIImage(named: "95")!),
+                      Word(englishWord: "Oversize", belarusianWord: "Oверсайз",
+                           englishDefinition: "Being of more than standard or ordinary size.",
+                           belarusianDefinition: "Наўмысны выбар свабоднага адзення або вялікіх памераў, чым гэта патрабуецца.",
+                           wordImage: UIImage(named: "96")!),
+                      Word(englishWord: "Oxford shoes", belarusianWord: "Оксфарды",
+                           englishDefinition: "Plain, formal shoes, made of leather, but they evolved into a range of styles suitable for formal, uniform, or casual wear.",
+                           belarusianDefinition: "Разнавіднасць абутку, якая нагадвае класічныя туфлі. Мае шнуроўкі закрытага тыпу, бакавыя часткі абутку прышытыя да пярэдняй асновы ў выглядзе літары V.",
+                           wordImage: UIImage(named: "97")!)]
+    
+    var wordArrayP = [Word(englishWord: "Packs", belarusianWord: "Пачкa",
+                           englishDefinition: "A stiff skirt used in ballet for dancers.",
+                           belarusianDefinition: "Кароткая, пышная, шматслойная спадніца.",
+                           wordImage: UIImage(named: "98")!),
+                      Word(englishWord: "Panama hat", belarusianWord: "Панама",
+                           englishDefinition: "A summer hat with small fields from a special variety of straw.",
+                           belarusianDefinition: "Летні шырокаполы капялюш.",
+                           wordImage: UIImage(named: "99")!),
+                      Word(englishWord: "Parka", belarusianWord: "Парка",
+                           englishDefinition: "Long warm jacket, usually with a hood. The parka is often confused with an anorak — a light windproof jacket worn over the head. The main difference is that the Parka is designed to protect from the cold, and the anorak — from the wind.",
+                           belarusianDefinition: "Падоўжаная куртка простага пакрою, звычайна з накладнымі кішэнямі.",
+                           wordImage: UIImage(named: "100")!),
+                      Word(englishWord: "Patchwork", belarusianWord: "Пэчворк",
+                           englishDefinition: "Pieces of cloth of various colors and shapes sewn together to form a covering.",
+                           belarusianDefinition: "Тэхніка, якая мяркуе выкарыстанне рознакаляровых шматкоў тканіны, на аснове якіх сшываецца адзінае палатно пэўнага кампазіцыйнага плана.",
+                           wordImage: UIImage(named: "101")!),
+                      Word(englishWord: "Pea-jacket", belarusianWord: "Пінжак",
+                           englishDefinition: "A jacket or short coat styled like this, worn by adults and children.",
+                           belarusianDefinition: "Верхняя частка мужчынскага касцюма ў выглядзе курткі з рукавамі, якая спераду зашпільваецца.",
+                           wordImage: UIImage(named: "102")!),
+                      Word(englishWord: "Peignoir", belarusianWord: "Пеньюар",
+                           englishDefinition: "A variety of domestic women's clothing, usually made of muslin, chiffon, silk or other transparent material; analogous to a man's robe. Often trimmed with lace.",
+                           belarusianDefinition: "Ранішняе жаночае адзенне з лёгкай тканіны.",
+                           wordImage: UIImage(named: "103")!),
+                      Word(englishWord: "Piercing", belarusianWord: "Пірсінг",
+                           englishDefinition: "A small hole in a part of the body, typically other than the ears, made so as to insert a ring, stud, or other piece of jewellery.",
+                           belarusianDefinition: "Праколванне і ўпрыгожванне розных частак цела завушніцамі, шпількамі.",
+                           wordImage: UIImage(named: "104")!),
+                      Word(englishWord: "Pigtail ", belarusianWord: "Коска",
+                           englishDefinition: "A length of hair that is tied at the back of the head or at each side of the head, sometimes in a twist.",
+                           belarusianDefinition: "Невялікая каса.",
+                           wordImage: UIImage(named: "105")!),
+                      Word(englishWord: "Pocket", belarusianWord: "Кішэнь",
+                           englishDefinition: "A small bag for carrying things in, made of cloth and sewn into the inside or onto the outside of a piece of clothing.",
+                           belarusianDefinition: "Частка адзення ў форме прышытага мяшочка для дробных рэчаў і грошай.",
+                           wordImage: UIImage(named: "106")!),
+                      Word(englishWord: "Pompon", belarusianWord: "Пампон",
+                           englishDefinition: "Ball-shaped decoration of thread. POM-poms can be of different sizes and colors, and can also be made of different materials, such as cotton, wool, paper, and others.",
+                           belarusianDefinition: "Упрыгожванне ў выглядзе шарыка з нітак, футра на шапках, туфлях.",
+                           wordImage: UIImage(named: "107")!),
+                      Word(englishWord: "Poncho", belarusianWord: "Понча",
+                           englishDefinition: "Latin American traditional outerwear in the form of a large rectangular piece of fabric with a hole for the head in the middle.",
+                           belarusianDefinition: "Лацінаамерыканская традыцыйная вопратка ў форме вялікага прастакутнага кавалка тканіны з адтулінай для галавы пасярэдзіне.",
+                           wordImage: UIImage(named: "108")!),
+                      Word(englishWord: "Ponytail", belarusianWord: "Конскі хвост",
+                           englishDefinition: "A hairstyle in which the hair is tied up high at the back of the head so that it hangs down like a horse's tail.",
+                           belarusianDefinition: "Разнавіднасць прычоскі.",
+                           wordImage: UIImage(named: "109")!),
+                      Word(englishWord: "Print", belarusianWord: "Прынт",
+                           englishDefinition: "Any type of pattern produced using ink on a piece of clothing.",
+                           belarusianDefinition: "Малюнак або фатаграфія, нанесеныя вызначаным спосабам на тканіну, паперу або іншую паверхню.",
+                           wordImage: UIImage(named: "110")!),
+                      Word(englishWord: "Punk", belarusianWord: "Панк",
+                           englishDefinition: "Culture popular  among young people, especially in the late 1970, involving opposition to authority expressed through shocking behaviour, clothes, and hair.",
+                           belarusianDefinition: "Прадстаўнік нефармальнага маладзёжнайга руху з агрэсіўным непрыняццем агульнапрынятых норм жыцця , што знаходзіла выяўленне ў манерах паводзін, адзенні і аксесуарах.",
+                           wordImage: UIImage(named: "111")!),
+                      Word(englishWord: "Pull-over", belarusianWord: "Пуловер",
+                           englishDefinition: "Tight-fitting jumper without collar and without fasteners, usually knitted or crocheted.",
+                           belarusianDefinition: "Род трыкатажнага світара без каўнера і засцежкі.",
+                           wordImage: UIImage(named: "112")!),
+                      Word(englishWord: "Pajamas", belarusianWord: "Пiжама",
+                           englishDefinition: "Variety of home clothes used primarily for sleep. Typical pajamas, consisting of loose pants and a shirt, is widespread in the home.",
+                           belarusianDefinition: "Адзенне, якое складаецца са свабоднай курткі і штаноў і носіцца дома.",
+                           wordImage: UIImage(named: "113")!)]
+    
+    var wordArrayQ:[Word] = []
+    
+    var wordArrayR = [Word(englishWord: "Raglan", belarusianWord: "Рэглан",
+                           englishDefinition: "A sleeve that extends in one piece fully to the collar, leaving a diagonal seam from underarm to collarbone.",
+                           belarusianDefinition: "Скроены  так, што рукаў складае з плячом адно цэлае.",
+                           wordImage: UIImage(named: "114")!),
+                      Word(englishWord: "Raincoat", belarusianWord: "Плашч",
+                           englishDefinition: "A coat that protects the wearer against rain.",
+                           belarusianDefinition: "Лёгкае паліто пераважна з непрамакальнай тканіны.",
+                           wordImage: UIImage(named: "115")!)]
+    
+    var wordArrayS = [Word(englishWord: "Sandals", belarusianWord: "Сандалi",
+                           englishDefinition: "Open light shoes, the sole of which (often without heels), is fixed on the leg with straps or ropes. It should be distinguished from a sandal with a closed toe and backdrop.",
+                           belarusianDefinition: "Лёгкiя летнія туфлі без абцасаў, якія   зашпільваюцца раменьчыкамі.",
+                           wordImage: UIImage(named: "116")!),
+                      Word(englishWord: "Scarf", belarusianWord: "Шалік",
+                           englishDefinition: "A strip, square, or triangle of cloth, worn around the neck, head, or shoulders to keep you warm or to make you look attractive.",
+                           belarusianDefinition: "Выраб з тканіны або шарсцяных нітак для захутвання шыі.",
+                           wordImage: UIImage(named: "117")!),
+                      Word(englishWord: "Second- hand", belarusianWord: "Сэканд-хэнд",
+                           englishDefinition: "Acquired after being used by another, usually it’s clothes, books or shoes.",
+                           belarusianDefinition: "Былыя ва ўжыванні,  патрыманыя, не новыя рэчы (звычайна адзенне).",
+                           wordImage: UIImage(named: "118")!),
+                      Word(englishWord: "Shirt", belarusianWord: "Кашуля",
+                           englishDefinition: "A piece of clothing worn, especially by men, on the upper part of the body, made of light cloth like cotton and usually having a collar and buttons at the front.",
+                           belarusianDefinition: "Сарочка, рубашка.",
+                           wordImage: UIImage(named: "119")!),
+                      Word(englishWord: "Shopping", belarusianWord: "Шопінг",
+                           englishDefinition: "The activity of buying things from shops.",
+                           belarusianDefinition: "Наведванне магазінаў з мэтай набыцця чаго-небудзь.",
+                           wordImage: UIImage(named: "120")!),
+                      Word(englishWord: "Shorts", belarusianWord: "Шорты",
+                           englishDefinition: "A kind of shortened clothing for the legs. Shorts can serve as an element of sportswear, beachwear, leisure clothing  and uniforms detail.",
+                           belarusianDefinition: "Штаны з кароткімі калошамі.",
+                           wordImage: UIImage(named: "121")!),
+                      Word(englishWord: "Shoes", belarusianWord: "Шузы",
+                           englishDefinition: "A covering for the foot, typically made of leather, having a sturdy sole and not reaching above the ankle.",
+                           belarusianDefinition: "Абутак, які закрывае нагу не вышэй шчыкалаткі.",
+                           wordImage: UIImage(named: "122")!),
+                      Word(englishWord: "Showroom", belarusianWord: "Шоўрум",
+                           englishDefinition: "A room used to display clothing for sale.",
+                           belarusianDefinition: "Месца,студыя або кватэра, дзе можна набыць у розніцу рэчы аднаго ці некалькіх дызайнераў.",
+                           wordImage: UIImage(named: "123")!),
+                      Word(englishWord: "Silhouette ", belarusianWord: "Сілуэт/Абрыс",
+                           englishDefinition: "A dark shape seen against a light surface.",
+                           belarusianDefinition: "Контурнае аднаколернае адлюстраванне каго-небудзь або чаго-небудзь, выразанае ці намаляванае на аднатонным фоне.",
+                           wordImage: UIImage(named: "124")!),
+                      Word(englishWord: "Silk", belarusianWord: "Шоўк",
+                           englishDefinition: "A delicate, soft type of cloth made from a thread produced by silkworms, or the thread itself.",
+                           belarusianDefinition: "Валакно,якое выпрацоўваюць вусені тутавага шаўкапрада.",
+                           wordImage: UIImage(named: "125")!),
+                      Word(englishWord: "Size", belarusianWord: "Памер",
+                           englishDefinition: "How large or small something or someone is.",
+                           belarusianDefinition: "Велічыня чаго-небудзь у адным або некалькіх вымярэннях.",
+                           wordImage: UIImage(named: "126")!),
+                      Word(englishWord: "Skirt", belarusianWord: "Спадніца",
+                           englishDefinition: "A piece of clothing for women and girls that hangs from the waist and does not have legs.",
+                           belarusianDefinition: "Жаночае адзенне, а таксама частка сукенкі ад таліі ўніз.",
+                           wordImage: UIImage(named: "127")!),
+                      Word(englishWord: "Slacks", belarusianWord: "Слаксы",
+                           englishDefinition: "Pants of certain materials which are not part of a suit.",
+                           belarusianDefinition: "Штаны свабоднага крою з тоўстай баваўнянай тканіны.",
+                           wordImage: UIImage(named: "128")!),
+                      Word(englishWord: "Sleeve", belarusianWord: "Рукаў",
+                           englishDefinition: "The part of a piece of clothing that covers some or all of the arm.",
+                           belarusianDefinition: "Дэталь адзення, якая зачыняе руку.",
+                           wordImage: UIImage(named: "129")!),
+                      Word(englishWord: "Sling", belarusianWord: "Слінг",
+                           englishDefinition: "A flexible strap or belt used in the form of a loop to support or raise a hanging weight.",
+                           belarusianDefinition: "Перавязь у выглядзе  палатна тканіны для нашэння немаўляці.",
+                           wordImage: UIImage(named: "130")!),
+                      Word(englishWord: "Slip-ons", belarusianWord: "Сліпоны",
+                           englishDefinition: "Lightweight shoes without lacing. Consist of the upper part  canvas and rubber sole.",
+                           belarusianDefinition: "Летнія кеды без шнуроўкі на гумавай падэшве.",
+                           wordImage: UIImage(named: "131")!),
+                      Word(englishWord: "Smoking-jacket", belarusianWord: "Смокiнг",
+                           englishDefinition: "Evening black jacket with open chest and long, silk-trimmed lapels.",
+                           belarusianDefinition: "Вячэрні чорны або цёмна-сіні касцюм, які складаецца з пінжака з абабітымі шоўкам штрыфлямі, і штаноў з ідэнтычнымі лацкане лампасамі.",
+                           wordImage: UIImage(named: "132")!),
+                      Word(englishWord: "Snood", belarusianWord: "Снуд",
+                           englishDefinition: "A type of scarf consisting of a wide ring of material, that is worn around the neck and that can be pulled up to cover the head.",
+                           belarusianDefinition: "Прыгожы і цёплы вязаный шалік са злучанымі бакамі.",
+                           wordImage: UIImage(named: "133")!),
+                      Word(englishWord: "Socks", belarusianWord: "Шкарпэткі",
+                           englishDefinition: "A piece of clothing made from soft material that covers your foot and the lower part of your leg.",
+                           belarusianDefinition: "Кароткія панчохі, якія не даходзяць да калена.",
+                           wordImage: UIImage(named: "134")!),
+                      Word(englishWord: "Sponge", belarusianWord: "Спонж",
+                           englishDefinition: "A porous rubber or cellulose product used similarly to do make-up.",
+                           belarusianDefinition: "Губка,  прызначаная для нанесення макіяжу.",
+                           wordImage: UIImage(named: "135")!),
+                      Word(englishWord: "Stockings  ", belarusianWord: "Панчохі",
+                           englishDefinition: "One of a pair of tight-fitting coverings for the feet and legs made of light material and worn by women.",
+                           belarusianDefinition: "Выраб машыннага або ручнога вязання, які надзяваецца на ногі і заходзіць за калені.",
+                           wordImage: UIImage(named: "136")!),
+                      Word(englishWord: "Stylist", belarusianWord: "Стыліст",
+                           englishDefinition: "A person whose job is to help people, especially famous people, decide on a style of clothes, hair, etc.",
+                           belarusianDefinition: "Спецыяліст у сферы стварэння стылю і ладу чалавека.",
+                           wordImage: UIImage(named: "137")!),
+                      Word(englishWord: "Stretch", belarusianWord: "Стрэйч",
+                           englishDefinition: "A type of fabric that is capable of stretching, usually used for sewing jeans or leggings.",
+                           belarusianDefinition: "Сінтэтычная эластычная тканіна, а таксама вырабы з яе.",
+                           wordImage: UIImage(named: "138")!),
+                      Word(englishWord: "Sundress", belarusianWord: "Сарафан",
+                           englishDefinition: "Women's clothing in the form of a sleeveless dress.",
+                           belarusianDefinition: "Жаночае адзенне ў выглядзе сукенкі без рукавоў.",
+                           wordImage: UIImage(named: "139")!),
+                      Word(englishWord: "Sunglasses", belarusianWord: "Сонцаахоўныя акуляры",
+                           englishDefinition: "Dark glasses that you wear to protect your eyes from bright light from the sun.",
+                           belarusianDefinition: "Акуляры , якія служаць для засцярогі вачэй ад сонца.",
+                           wordImage: UIImage(named: "140")!),
+                      Word(englishWord: "Suit", belarusianWord: "Касцюм",
+                           englishDefinition: "A set of outer clothes made of the same fabric and designed to be worn together, typically consisting of a jacket and trousers or a jacket and skirt.",
+                           belarusianDefinition: "Камплект адзення, які складаецца з пінжака, штаноў і камізэлькі (у мужчын) або жакета і спадніцы (у жанчын).",
+                           wordImage: UIImage(named: "141")!),
+                      Word(englishWord: "Sweater", belarusianWord: "Свiтaр",
+                           englishDefinition: "An item of knitted upper body clothing with no clasps, long sleeves and a distinctive high two - or three-layer collar hugging the neck.",
+                           belarusianDefinition: "Вязаны выраб без зашпілек з каўняром, які аблягае шыю.",
+                           wordImage: UIImage(named: "142")!),
+                      Word(englishWord: "Sweatshirt", belarusianWord: "Світшот",
+                           englishDefinition: "A piece of informal clothing with long sleeves, usually made of thick cotton, worn on the upper part of the body.",
+                           belarusianDefinition: "Разнавіднасць світaра, пашытая са шчыльнага трыкатажнага палатна.",
+                           wordImage: UIImage(named: "143")!),
+                      Word(englishWord: "Swimsuit", belarusianWord: "Купальнік",
+                           englishDefinition: "A woman's one-piece swimming costume.",
+                           belarusianDefinition: "Касцюм для купання.",
+                           wordImage: UIImage(named: "144")!),
+                      Word(englishWord: "Swinger", belarusianWord: "Свінгер",
+                           englishDefinition: "Short coat in swinging distance.",
+                           belarusianDefinition: "Кароткае расклёшанае паліто.",
+                           wordImage: UIImage(named: "145")!)]
+    
+    var wordArrayT = [Word(englishWord: "Tanga", belarusianWord: "Танга",
+                           englishDefinition: "A type of women’s underwear.",
+                           belarusianDefinition: "Від ніжняй жаночай бялізны.",
+                           wordImage: UIImage(named: "146")!),
+                      Word(englishWord: "Tie", belarusianWord: "Гальштук",
+                           englishDefinition: "A piece of string or other long, thin material, or to (cause to) hold together with a long, thin piece of string, material, etc.",
+                           belarusianDefinition: "Прадмет убору ў форме палоскі тканіны, якая завязваецца пад каўняром сарочкі, блузы вузлом або бантам.",
+                           wordImage: UIImage(named: "147")!),
+                      Word(englishWord: "Tie-dye", belarusianWord: "Тай-дай",
+                           englishDefinition: "A modern technique  of producing patterns in textiles by tying portions of the fabric or yarn so that they will not absorb the dye.",
+                           belarusianDefinition: "Тэхніка афарбоўвання адзення, якая мяркуе абстрактнае нанясенне кантрасных спалучэнняў.",
+                           wordImage: UIImage(named: "148")!),
+                      Word(englishWord: "Tights ", belarusianWord: "Калготы",
+                           englishDefinition: "A piece of clothing made of thin material that covers the legs and lower part of the body below the waist, worn by women and girls.",
+                           belarusianDefinition: "Жаночыя ці дзіцячыя панчохі, вывязаныя разам са штанамі; штаны-панчохі.",
+                           wordImage: UIImage(named: "149")!),
+                      Word(englishWord: "Tips", belarusianWord: "Тыпсы",
+                           englishDefinition: "Type of false nails, which are made of plastic and made in order to stick them yourself at home.",
+                           belarusianDefinition: "Накладныя пазногці.",
+                           wordImage: UIImage(named: "150")!),
+                      Word(englishWord: "Top", belarusianWord: "Топ",
+                           englishDefinition: "Women's blouse or jacket, not reaching the middle of the abdomen.",
+                           belarusianDefinition: "Кароткая жаночая кофтачка або майка на шлейках.",
+                           wordImage: UIImage(named: "151")!),
+                      Word(englishWord: "Top-model", belarusianWord: "Топ-мадэль",
+                           englishDefinition: "An international high fashion supermodel.",
+                           belarusianDefinition: "Мадэль, якая ў найбольшай ступені адпавядае эталону прыгажосці.",
+                           wordImage: UIImage(named: "152")!),
+                      Word(englishWord: "Total look", belarusianWord: "Тотал-лук",
+                           englishDefinition: "A set of clothes, fully or almost completely made in one color. May contain several shades of the same color.",
+                           belarusianDefinition: "Камплект адзення цалкам аднаго колеру альбо некалькіх адценняў аднаго колеру. Таксама гэта адзенне і аксесуары аднаго брэнда. У свеце моды гэта лічыцца дурным тонам.",
+                           wordImage: UIImage(named: "153")!),
+                      Word(englishWord: "Trainers", belarusianWord: "Красоўкі",
+                           englishDefinition: "A type of light, comfortable shoe that can be worn for sport.",
+                           belarusianDefinition: "Лёгкі спартовы абутак на гумавай падэшве.",
+                           wordImage: UIImage(named: "154")!),
+                      Word(englishWord: "Trend", belarusianWord: "Трэнд",
+                           englishDefinition: "A general development or change in a situation or in the way that people are behaving.",
+                           belarusianDefinition: "Заўважны напрамак, галоўная тэндэнцыя ў развіцці чаго-небудзь.",
+                           wordImage: UIImage(named: "155")!),
+                      Word(englishWord: "Trousers", belarusianWord: "Штаны(нагавіцы)",
+                           englishDefinition: "A piece of clothing that covers the lower part of the body from the waist to the feet, consisting of two cylinder-shaped parts, one for each leg, that are joined at the top.",
+                           belarusianDefinition: "Верхняе адзенне, якое мае дзве калашыны і закрывае ніжнюю частку тулава разам з нагамі.",
+                           wordImage: UIImage(named: "156")!),
+                      Word(englishWord: "T-shirt", belarusianWord: "Цішотка, футболка",
+                           englishDefinition: "A style of fabric shirt named after the T shape of its body and sleeves.",
+                           belarusianDefinition: "Майка.",
+                           wordImage: UIImage(named: "157")!)]
+    
+    var wordArrayU = [Word(englishWord: "Uggs", belarusianWord: "Уггі",
+                           englishDefinition: "A type of wellingtons that are usually made up from suede.",
+                           belarusianDefinition: "Грубоватого выгляду боты з аўчыны.",
+                           wordImage: UIImage(named: "158")!),
+                      Word(englishWord: "Umbrella", belarusianWord: "Парасон",
+                           englishDefinition: "A device for protection against the rain, consisting of a stick with a folding frame covered in material at one end and usually a handle at the other, or a similar, often larger, device used for protection against the sun.",
+                           belarusianDefinition: "Прыстасаванне для засцярогі ад дажджу і сонца ў выглядзе замацаванага на палцы складнога каркаса, абцянутага матэрыялам.",
+                           wordImage: UIImage(named: "159")!),
+                      Word(englishWord: "Uniform", belarusianWord: "Уніформа",
+                           englishDefinition: "The same style, cut, color and fabric special (service) clothing to create a single image of the corporate group.",
+                           belarusianDefinition: "Аднолькавае  па стылю, крою, колеру і тканіне  спецыяльнае (службовае) адзенне для стварэння адзінага аблічча карпаратыўнай групы.",
+                           wordImage: UIImage(named: "160")!),
+                      Word(englishWord: "Unisex", belarusianWord: "Унісекс",
+                           englishDefinition: "Things, usually clothes or places, which are designed for use by both men and women.",
+                           belarusianDefinition: "Адзенне, якое прызначаецца і для мужчын, і для жанчын.",
+                           wordImage: UIImage(named: "161")!)]
+    
+    var wordArrayV = [Word(englishWord: "Veil", belarusianWord: "Вэлюм",
+                           englishDefinition: "A piece of material worn so as to fall over the head and shoulders on each side of the face, forming a part of the headdress of a nun.",
+                           belarusianDefinition: "Жаночы галаўны ўбор, які часткова або цалкам хавае твар.",
+                           wordImage: UIImage(named: "162")!),
+                      Word(englishWord: "Velvet", belarusianWord: "Вельвет",
+                           englishDefinition: "A clothing and upholstery fabric  characterized by a short soft dense warp pile.",
+                           belarusianDefinition: "Баваўняная тканіна з густым ворсам і падоўжнымі рубчыкамі на адным баку, разнавіднасць корда, але з больш вузкімі рубчыкамі.",
+                           wordImage: UIImage(named: "163")!),
+                      Word(englishWord: "Vintage", belarusianWord: "Вінтаж",
+                           englishDefinition: "Style, which is having all the best or most typical qualities of something, especially from the past.",
+                           belarusianDefinition: "Стыль у адзенні, сутнасць якога заключаецц ў папулярызацыі рэчаў, модных у мнулым.",
+                           wordImage: UIImage(named: "164")!),
+                      Word(englishWord: "Visagist", belarusianWord: "Візажыст",
+                           englishDefinition: "Facial care specialist choosing makeup, hairstyle, accessories for him.",
+                           belarusianDefinition: "Касметолаг, спецыяліст па доглядзе за тварам, які падбірае прычоску, макіяж, аксесуары.",
+                           wordImage: UIImage(named: "165")!)]
+    
+    var wordArrayW = [Word(englishWord: "Waistcoat", belarusianWord: "Камізэлька",
+                           englishDefinition: "A piece of clothing that covers the upper body but not the arms and usually has buttons down the front, worn over a shirt.",
+                           belarusianDefinition: "Мужчынская ці жаночая верхняя вопратка без рукавоў. У класічным варыянце апранаецца пад пінжак.",
+                           wordImage: UIImage(named: "166")!),
+                      Word(englishWord: "Waterproof", belarusianWord: "Ватэрпруф",
+                           englishDefinition: "Covered or treated with a material (such as a solution of rubber) to prevent permeation by water.",
+                           belarusianDefinition: "Непрамакальнае паліто, непрамакайка; таксама жаночае доўгае летняе паліто.",
+                           wordImage: UIImage(named: "167")!),
+                      Word(englishWord: "Winklepicker", belarusianWord: "Вінкл-пікер",
+                           englishDefinition: "A style of shoe or boot worn from the 1950s onward by British rock and roll fans.",
+                           belarusianDefinition: "Востраносыя  чаравікі на  плоскай падэшве.",
+                           wordImage: UIImage(named: "168")!),
+                      Word(englishWord: "Wool", belarusianWord: "Шэрсць",
+                           englishDefinition: "Thick thread or material that is made from it.",
+                           belarusianDefinition: "Пража,ніткі з такога валакна,тканіна з такой пражы.",
+                           wordImage: UIImage(named: "169")!),
+                      Word(englishWord: "Wristband", belarusianWord: "Бранзалет",
+                           englishDefinition: "A ring of stiff plastic, metal, etc. worn around the wrist or arm as jewelry.",
+                           belarusianDefinition: "Упрыгожванне ў выглядзе вялікага кальца з высакародных металаў, слановай косці, якое носяць на руцэ вышэй кісці.",
+                           wordImage: UIImage(named: "170")!)]
+    
+    var wordArrayX:[Word] = []
+    
+    var wordArrayY:[Word] = []
+    
+    var wordArrayZ = [Word(englishWord: "Zip", belarusianWord: "Замок",
+                           englishDefinition: "A device consisting of two rows of metal or plastic teeth-like parts that are brought together by pulling a small sliding piece over them, used for closing openings in clothing, bags, etc.",
+                           belarusianDefinition: "Від засцёжкі ў адзенні.",
+                           wordImage: UIImage(named: "171")!)]
+    
+    var wordArrayForOtherCharacters:[Word] = []
+    
+    var wordsArrayInAlphabeticalOrder:[[Word]] = []
+    
+    static let shared = SingleTon()
+    private init () {
+        self.wordsArrayInAlphabeticalOrder = [ wordArrayA,
+                                               wordArrayB,
+                                               wordArrayC,
+                                               wordArrayD,
+                                               wordArrayE,
+                                               wordArrayF,
+                                               wordArrayG,
+                                               wordArrayH,
+                                               wordArrayI,
+                                               wordArrayJ,
+                                               wordArrayK,
+                                               wordArrayL,
+                                               wordArrayM,
+                                               wordArrayN,
+                                               wordArrayO,
+                                               wordArrayP,
+                                               wordArrayQ,
+                                               wordArrayR,
+                                               wordArrayS,
+                                               wordArrayT,
+                                               wordArrayU,
+                                               wordArrayV,
+                                               wordArrayW,
+                                               wordArrayX,
+                                               wordArrayY,
+                                               wordArrayZ,
+                                               wordArrayForOtherCharacters]
+    }
+    
+    //MARK: - Flow Functions
+    
+    func getWordsCounted(index: Int) -> Int {
+        return wordsArrayInAlphabeticalOrder[index].count
+    }
+    
+    func getWords() -> [[Word]] {
+        return wordsArrayInAlphabeticalOrder
+    }
+    
+    func addNewWordToVocabulary(word: Word) {
+        var wordStartsFromLetter = false
+        word.englishWord = word.englishWord.trimmingCharacters(in: .whitespacesAndNewlines)
+        if let firstCharacter:Character = word.englishWord.first {
+            var index = 0
+            for array in wordsArrayInAlphabeticalOrder {
+                if sectionName[index].lowercased() == firstCharacter.lowercased() {
+                    var newArray = array
+                    newArray.append(word)
+                    newArray.sort(by: { $0.englishWord < $1.englishWord })
+                    wordsArrayInAlphabeticalOrder[index] = newArray
+                    wordStartsFromLetter = true
+                }
+                index += 1
+            }
+        }
+        if wordStartsFromLetter == false {
+            var newArray = wordsArrayInAlphabeticalOrder[26]
+            newArray.append(word)
+            newArray.sort(by: { $0.englishWord < $1.englishWord })
+            wordsArrayInAlphabeticalOrder[26] = newArray
+        }
+        saveWords()
+    }
+    
+    func deleteWordFromVocabulary(word: Word,indexPath: Int) {
+        var wordStartsFromLetter = false
+        if let firstCharacter:Character = word.englishWord.first {
+            var index = 0
+            for array in wordsArrayInAlphabeticalOrder {
+                if sectionName[index].lowercased() == firstCharacter.lowercased() {
+                    var newArray = array
+                    newArray.remove(at: indexPath)
+                    wordsArrayInAlphabeticalOrder[index] = newArray
+                    wordStartsFromLetter = true
+                }
+                index += 1
+            }
+        }
+        if wordStartsFromLetter == false {
+            var newArray = wordsArrayInAlphabeticalOrder[26]
+            newArray.remove(at: indexPath)
+            wordsArrayInAlphabeticalOrder[26] = newArray
+        }
+        saveWords()
+    }
+    
+    func deleteWordBeforeEditing(word: Word,indexPath: Int) {
+        var wordStartsFromLetter = false
+        if let firstCharacter:Character = word.englishWord.first {
+            var index = 0
+            for array in wordsArrayInAlphabeticalOrder {
+                if sectionName[index].lowercased() == firstCharacter.lowercased() {
+                    var newArray = array
+                    newArray.remove(at: indexPath)
+                    wordsArrayInAlphabeticalOrder[index] = newArray
+                    wordStartsFromLetter = true
+                }
+                index += 1
+            }
+        }
+        if wordStartsFromLetter == false {
+            var newArray = wordsArrayInAlphabeticalOrder[26]
+            newArray.remove(at: indexPath)
+            wordsArrayInAlphabeticalOrder[26] = newArray
+        }
+    }
+    
+    func loadVocabulary() {
+        autoreleasepool {
+            do {
+                if let data = FilesManager.shared.loadData() {
+                    let value = try JSONDecoder().decode([[Word]].self, from: data)
+                    wordsArrayInAlphabeticalOrder = value
+
+                }
+            } catch {}
+        }
+    }
+
+    
+    func saveWords() {
+        autoreleasepool {
+                do {
+                    let data = try JSONEncoder().encode(self.wordsArrayInAlphabeticalOrder)
+                    FilesManager.shared.saveData(data: data) {
+                        print("DONE")
+                    }
+                } catch {}
+            }
+    }
+}
